@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مدونتي | الاجتماعات والمحاضرات</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="eyebrow">مدونة شخصية</p>
+        <h1>اجمع ملاحظاتك، ملفاتك، والاجتماعات القادمة في مكان واحد</h1>
+        <p class="hero-text">
+          استخدم هذه الصفحة لتسجيل كل ما يهمك من محاضرات، اجتماعات، وملاحظات
+          مهمة مع تواريخها.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <div class="section-header">
+          <h2>الأحداث القادمة</h2>
+          <span class="pill">مجدول</span>
+        </div>
+        <div id="eventsList" class="events-list"></div>
+      </section>
+
+      <section class="card form-card">
+        <div class="section-header">
+          <h2>إضافة منشور أو حدث</h2>
+          <span class="pill">جديد</span>
+        </div>
+        <form id="entryForm">
+          <div class="grid">
+            <label>
+              العنوان
+              <input type="text" name="title" placeholder="مثال: محاضرة عن الذكاء الاصطناعي" required />
+            </label>
+            <label>
+              النوع
+              <select name="type" required>
+                <option value="ملاحظة">ملاحظة</option>
+                <option value="اجتماع">اجتماع</option>
+                <option value="محاضرة">محاضرة</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            التفاصيل
+            <textarea name="content" rows="4" placeholder="اكتب ملاحظاتك أو معلومات الحدث" required></textarea>
+          </label>
+          <label>
+            التاريخ
+            <input type="date" name="date" required />
+          </label>
+          <input type="hidden" name="id" />
+          <div class="form-actions">
+            <button type="submit" id="submitBtn">حفظ</button>
+            <button type="button" id="cancelEditBtn" class="secondary" hidden>إلغاء</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>كل الملاحظات والملفات</h2>
+          <span class="pill">تاريخي</span>
+        </div>
+        <div id="entriesList" class="entries-list"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
